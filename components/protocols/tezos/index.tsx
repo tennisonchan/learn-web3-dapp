@@ -1,3 +1,4 @@
+// tezos solution
 import { useEffect, useReducer } from "react";
 import { Row } from 'antd';
 import { Connect, Balance, Getter, Setter, Account, Deploy, Transfer } from '@tezos/components/steps';
@@ -28,29 +29,29 @@ const TezosApp: React.FC<AppI> = ({ chain }) => {
 
     return (
         <Row>
-        <Sidebar
-            steps={steps}
-            stepIndex={state.index}
-        />
-        <Step
-            step={step}
-            isFirstStep={isFirstStep}
-            isLastStep={isLastStep}
-            prev={prevHandler}
-            next={nextHandler}
-            body={
-                <>
-                    { step.id === "connect"  && <Connect /> }
-                    { step.id === "account"  && <Account /> }
-                    { step.id === "balance"  && <Balance /> }
-                    { step.id === "transfer"  && <Transfer /> }
-                    { step.id === "deploy"  && <Deploy /> }
-                    { step.id === "getter"  && <Getter /> }
-                    { step.id === "setter"  && <Setter /> }
-                </>
-            }
-            nav={<Nav />}
-        />
+            <Sidebar
+                steps={steps}
+                stepIndex={state.index}
+            />
+            <Step
+                step={step}
+                isFirstStep={isFirstStep}
+                isLastStep={isLastStep}
+                prev={prevHandler}
+                next={nextHandler}
+                body={
+                    <>
+                        { step.id === "connect"  && <Connect /> }
+                        { step.id === "account"  && <Account /> }
+                        { step.id === "balance"  && <Balance /> }
+                        { step.id === "transfer"  && <Transfer /> }
+                        { step.id === "deploy"  && <Deploy /> }
+                        { step.id === "getter"  && <Getter /> }
+                        { step.id === "setter"  && <Setter /> }
+                    </>
+                }
+                nav={<Nav />}
+            />
         </Row>
   );
 }
